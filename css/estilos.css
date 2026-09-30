@@ -1,0 +1,482 @@
+
+/* ==============================
+   CONFIGURACIÓN GENERAL
+   ============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333333;
+    background-color:#fcf9f5 ;
+    overflow-x: hidden; /* Evita el desplazamiento horizontal */
+}
+
+
+/* ==============================
+   ENCABEZADO
+   ============================== */
+
+header {
+    
+    display: flex;
+    align-items: center;/* Los centra verticalmente */
+    justify-content: space-between;/* Separa el logo, el menú y el carrito equitativamente */
+    padding: 20px 4%;/* Les da un margen interno elegante */
+    max-width: 1200px;
+    margin: 0 auto;/* Centra el encabezado en pantallas grandes */
+    
+  }
+  nav a {
+    margin: 0 15px;
+    text-decoration: none;/* Separa los enlaces del menú entre sí */
+    color: #333;
+  }
+
+
+/* Logo */
+
+.logo{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+}
+.logo img {
+  max-width: 120px;
+  height: auto;
+  display: block;
+}
+
+
+/* Menú */
+
+nav {
+    display: flex;
+    gap: 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+nav a:hover {
+    color: #a77b72;
+}
+
+
+/* Carrito */
+
+.carrito {
+    font-size: 22px;
+}
+
+#cantidad-carrito {
+    font-size: 12px;
+}
+
+
+/* ==============================
+   PRESENTACIÓN
+   ============================== */
+
+.presentacion {
+    padding: 60px 20px;/* espacio arriba y abajo*/
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);/* Una sombra casi invisible que le da relieve */
+    max-width: 800px;
+    margin-bottom: 50px;/* Separa esta sección de los productos destacados */
+    margin: 100px auto;
+    text-align: center;/*centra todos los textos y el boton*/
+}
+
+.nombre-marca {
+    font-size: 14px;
+    letter-spacing: 3px;
+
+    margin-bottom: 25px;
+
+    color: #8b6f68;
+}
+/*Titulo principal*/
+.presentacion h1 {
+    font-size: 2.5rem;
+  color: #2c3e50;             /* Color elegante para el título */
+  margin-bottom: 20px;
+}
+
+.presentacion p {
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color: #555;
+}
+
+/*Estilo para el parrafo principal del texto adaptado*/
+.descripcion-marca {
+    font-size: 1.1rem;
+    line-height: 1.6;/*le da aire entre lineas al texto */
+    color: #555555;
+    margin:0 auto 20px auto;
+    max-width: 700px; /* Limita el ancho del párrafo para mejor legibilidad */
+}
+.destaque-marca {
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight:500;
+    color:#cca7a2; /* Color que resalta el mensaje */
+    margin-top: 15px;
+}
+
+/* ==============================
+   BOTONES
+   ============================== */
+
+.boton {
+   display: inline-block;
+  background-color: #cca7a2;  /* Cambiamos el gris oscuro por el rosa de la marca */
+  color: white;
+  padding: 12px 30px;
+  text-decoration: none;
+  border-radius: 25px;        /* Botón redondeado, más amigable */
+  font-weight: bold;
+  margin-top: 25px;
+  transition: background-color 0.3s ease; /* Efecto suave al pasar el mouse */
+}
+
+.boton:hover {
+    background-color: #536b75;
+}
+
+
+/* ==============================
+   PRODUCTOS DESTACADOS
+   ============================== */
+
+.destacados {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.destacados h2 {
+    font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+#productos-container {
+    display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Columnas automáticas según la pantalla */
+  gap: 30px; /* Espacio de separación entre cada tarjeta de producto */
+  padding: 20px 0;
+}
+
+
+/* ==============================
+   PIE DE PÁGINA
+   ============================== */
+
+footer {
+    margin-top: 100px;
+
+    padding: 40px;
+
+    text-align: center;
+
+    background-color: #f8f5f3;
+
+    color: #555;
+}
+
+
+/* ==============================
+   CELULARES
+   ============================== */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 0 20px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    .presentacion {
+        margin: 70px 25px;
+    }
+
+    .presentacion h1 {
+        font-size: 32px;
+    }
+
+    #productos-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* ==============================
+   TARJETAS DE PRODUCTOS
+   ============================== */
+
+.producto-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto cuando pasamos el mouse */
+.producto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Imagen del producto */
+.producto-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+/* Nombre del producto */
+.producto-card h3 {
+    font-size: 20px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+/* Descripción */
+.producto-card p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #666;
+}
+
+/* Precio */
+.producto-card .precio {
+    font-size: 20px;
+    font-weight: bold;
+    color: #8b6f68;
+    margin: 15px 0;
+}
+
+/* Botón agregar al carrito */
+.boton-agregar {
+    border: none;
+    background-color: #cca7a2;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* Efecto del botón */
+.boton-agregar:hover {
+    background-color: #536b75;
+}
+/* ========================================
+   IMAGEN DEL PRODUCTO
+======================================== */
+
+.imagen-producto {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+
+/* Efecto cuando pasamos el mouse */
+
+.imagen-producto:hover {
+    transform: scale(1.03);
+}
+
+
+/* ========================================
+   VENTANA DE ZOOM
+======================================== */
+
+.modal-imagen {
+
+    /* Ocupa toda la pantalla */
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    /* Fondo oscuro */
+    background-color: rgba(0, 0, 0, 0.85);
+
+    /* Centramos la imagen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* La ventana queda por encima de todo */
+    z-index: 1000;
+
+    /* Oculta el modal inicialmente */
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.3s ease;
+}
+
+
+/* Cuando agregamos "mostrar", aparece */
+
+.modal-imagen.mostrar {
+
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* ========================================
+   IMAGEN AMPLIADA
+======================================== */
+
+#imagen-zoom {
+
+    max-width: 80%;
+    max-height: 85%;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.4);
+}
+
+
+/* ========================================
+   BOTÓN CERRAR
+======================================== */
+
+.cerrar-modal {
+
+    position: absolute;
+
+    top: 25px;
+    right: 35px;
+
+    background: none;
+    border: none;
+
+    color: white;
+
+    font-size: 40px;
+
+    cursor: pointer;
+
+    z-index: 1001;
+}
+
+
+/* ========================================
+   FLECHAS
+======================================== */
+
+.flecha {
+
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    background: rgba(255, 255, 255, 0.2);
+
+    border: none;
+
+    color: white;
+
+    font-size: 50px;
+
+    width: 55px;
+    height: 70px;
+
+    cursor: pointer;
+
+    border-radius: 8px;
+}
+
+
+/* Flecha izquierda */
+
+.flecha-izquierda {
+    left: 30px;
+}
+
+
+/* Flecha derecha */
+
+.flecha-derecha {
+    right: 30px;
+}
+
+
+/* Efecto al pasar el mouse */
+
+.flecha:hover {
+
+    background: rgba(255, 255, 255, 0.4);
+}
+
+
+/* ========================================
+   ADAPTACIÓN PARA CELULARES
+======================================== */
+
+@media (max-width: 600px) {
+
+    #imagen-zoom {
+
+        max-width: 90%;
+        max-height: 80%;
+    }
+
+    .flecha {
+
+        font-size: 35px;
+
+        width: 45px;
+        height: 55px;
+    }
+
+    .flecha-izquierda {
+        left: 10px;
+    }
+
+    .flecha-derecha {
+        right: 10px;
+    }
+
+    .cerrar-modal {
+
+        top: 15px;
+        right: 20px;
+
+        font-size: 30px;
+    }
+}
